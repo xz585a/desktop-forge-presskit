@@ -1,0 +1,77 @@
+Desktop Forge — Fact Sheet (English)
+https://store.steampowered.com/app/5016990/
+
+================================================================
+FACT SHEET
+================================================================
+
+Title:        Desktop Forge
+Genre:        Idle crafting & management sim / desktop companion
+Platform:     PC (Windows / Steam)
+Languages:    English, Japanese (text; no voice acting)
+Release:      H1 2027
+Price:        TBA
+Demo:         Planned
+Developer:    Nulpoyo (solo)
+Steam:        https://store.steampowered.com/app/5016990/
+Trailer:      (coming soon)
+
+================================================================
+ABOUT
+================================================================
+
+Desktop Forge is an idle crafting and management sim that runs in a small window at the
+edge of your desktop while you work.
+
+Your smiths each have their own traits and likes, and they work on their own. You never
+assign tasks directly — you decide which jobs each of them is allowed to take, and let the
+personalities collide. Who ends up at the same workbench changes what comes out of it.
+
+Every finished sword has a split between edge, durability and enchantment, across ten
+distinct blade types. For each one, you choose: sell it for cash, or give it to an
+adventurer who stops by.
+
+Buyers pay for balance. Dungeons reward specialization, and each destination rewards a
+different one. The same sword can be mediocre on the market and perfect for the road —
+that tension is the core of the game.
+
+A sword you hand over comes back as an adventure log, with coin and renown. Or it comes
+back broken, with its bearer wounded. Or it doesn't come back at all. Either way it goes
+into your workshop's chronicle, and you decide what to forge next.
+
+================================================================
+KEY FEATURES
+================================================================
+
+- An idle game in a small always-on window, made to sit at the edge of your working desktop
+- Smiths with traits, likes and moods — you shape the roster, not the orders
+- Ten blade types, each with a different split between edge, durability and enchantment
+- Sell or gift: the market and the road value the same sword differently
+- Adventurers get wounded and die, and it stays in your workshop's chronicle
+- Long-term goals: codex records, a workshop upgrade tree, and renown that opens new regions
+
+================================================================
+DEVELOPER
+================================================================
+
+Nulpoyo. A solo developer based in Japan, making games alongside a full-time office job.
+
+I like games with a lot to chew on — which means mine tend to end up harder than I
+intended. Most of the work on Desktop Forge has gone into balancing: keeping it something
+you can leave running at the edge of your screen, while still leaving numbers worth
+pushing on.
+
+================================================================
+USAGE PERMISSION
+================================================================
+
+All assets in this press kit are free to use in articles, videos and streams, including
+monetized content. No permission or notification needed. If you need a specific scene
+captured or a different asset, just ask.
+
+================================================================
+CONTACT
+================================================================
+
+Nulpoyo (solo developer)
+Email: xz585a@gmail.com

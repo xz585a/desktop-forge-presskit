@@ -1,0 +1,328 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Desktop Forge — Press Kit</title>
+<meta name="description" content="Press kit for Desktop Forge, an idle crafting and management sim that lives in the corner of your desktop.">
+<link rel="icon" href="assets/images/desktop_forge_icon.png">
+<style>
+  :root {
+    --bg: #14100d;
+    --bg-alt: #1c1713;
+    --line: #3a2f26;
+    --fg: #ece2d6;
+    --fg-dim: #a99781;
+    --accent: #e08a3c;
+    --accent-dim: #8a5423;
+    --radius: 6px;
+    --max: 900px;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--fg);
+    font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, sans-serif;
+    line-height: 1.75;
+    font-size: 16px;
+  }
+  .wrap { max-width: var(--max); margin: 0 auto; padding: 0 20px; }
+  a { color: var(--accent); }
+  a:hover { color: #f5a862; }
+
+  /* ---- header ---- */
+  header {
+    border-bottom: 1px solid var(--line);
+    background: linear-gradient(180deg, #1e1813 0%, var(--bg) 100%);
+    padding: 44px 0 36px;
+    text-align: center;
+  }
+  header img.logo { width: 96px; height: 96px; image-rendering: pixelated; }
+  h1 { font-size: 2.1rem; margin: 14px 0 6px; letter-spacing: .04em; }
+  .tagline { color: var(--fg-dim); margin: 0 auto; max-width: 620px; }
+  .langbar { margin-top: 22px; font-size: .9rem; }
+  .langbar a {
+    display: inline-block; padding: 5px 14px; border: 1px solid var(--line);
+    border-radius: var(--radius); text-decoration: none; margin: 0 4px;
+  }
+  .langbar a:hover { border-color: var(--accent); }
+
+  /* ---- sections ---- */
+  section { padding: 46px 0; border-bottom: 1px solid var(--line); }
+  h2 {
+    font-size: 1.35rem; margin: 0 0 4px; color: var(--accent);
+    letter-spacing: .03em;
+  }
+  h2 .en { color: var(--fg-dim); font-size: .85rem; font-weight: normal; letter-spacing: .06em; }
+  h3 { font-size: 1.02rem; margin: 30px 0 8px; color: var(--fg); }
+  p { margin: 0 0 14px; }
+  ul { margin: 0 0 14px; padding-left: 1.25em; }
+  li { margin-bottom: 5px; }
+
+  /* ---- fact sheet ---- */
+  table.facts { width: 100%; border-collapse: collapse; font-size: .94rem; }
+  table.facts th, table.facts td {
+    text-align: left; padding: 9px 10px; border-bottom: 1px solid var(--line); vertical-align: top;
+  }
+  table.facts th { color: var(--fg-dim); font-weight: normal; width: 30%; white-space: nowrap; }
+
+  /* ---- buttons ---- */
+  .buttons { display: flex; flex-wrap: wrap; gap: 10px; margin: 22px 0 0; }
+  .btn {
+    display: inline-block; padding: 11px 20px; border-radius: var(--radius);
+    background: var(--accent); color: #1a120a; text-decoration: none; font-weight: bold;
+  }
+  .btn:hover { background: #f0a054; color: #1a120a; }
+  .btn.ghost { background: transparent; color: var(--accent); border: 1px solid var(--accent-dim); }
+  .btn.ghost:hover { background: rgba(224,138,60,.1); color: var(--accent); }
+
+  /* ---- media grid ---- */
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 14px; margin-top: 18px; }
+  figure { margin: 0; }
+  figure a { display: block; }
+  figure img {
+    width: 100%; display: block; border: 1px solid var(--line); border-radius: var(--radius);
+    background: var(--bg-alt);
+  }
+  figcaption { font-size: .82rem; color: var(--fg-dim); margin-top: 6px; }
+  .placeholder {
+    display: flex; align-items: center; justify-content: center; text-align: center;
+    aspect-ratio: 16 / 9; border: 1px dashed var(--line); border-radius: var(--radius);
+    background: var(--bg-alt); color: var(--fg-dim); font-size: .85rem; padding: 12px;
+  }
+
+  /* ---- video ---- */
+  .video-frame {
+    position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;
+    border: 1px solid var(--line); border-radius: var(--radius); background: var(--bg-alt);
+  }
+  .video-frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+
+  /* ---- misc ---- */
+  .note {
+    background: var(--bg-alt); border-left: 3px solid var(--accent-dim);
+    padding: 14px 18px; border-radius: 0 var(--radius) var(--radius) 0; margin: 18px 0;
+    color: var(--fg-dim); font-size: .93rem;
+  }
+  .en-block { color: var(--fg-dim); }
+  .en-block h2 { color: var(--fg-dim); }
+  code { background: var(--bg-alt); padding: 2px 6px; border-radius: 3px; font-size: .9em; }
+  footer { padding: 34px 0 60px; color: var(--fg-dim); font-size: .88rem; text-align: center; }
+  footer a { color: var(--fg-dim); }
+
+  @media (max-width: 560px) {
+    h1 { font-size: 1.6rem; }
+    table.facts th { width: 40%; white-space: normal; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <img class="logo" src="assets/images/desktop_forge_icon.png" alt="Desktop Forge">
+    <h1>Desktop Forge</h1>
+    <p class="tagline">
+      デスクトップの片隅に置く、小さな鍛冶工房。打った剣は売るか、冒険者へ渡すか。<br>
+      A tiny forge that lives in the corner of your desktop. Sell each blade, or hand it to a passing adventurer.
+    </p>
+    <nav class="langbar">
+      <a href="#ja">日本語</a>
+      <a href="#en">English</a>
+      <a href="#media">Screenshots &amp; GIFs</a>
+      <a href="#downloads">Downloads</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ============ 動画 / Trailer ============ -->
+<section id="trailer">
+  <div class="wrap">
+    <h2>トレーラー <span class="en">/ Trailer</span></h2>
+    <!-- TODO: YouTube に公開したら、下の placeholder を消して video-frame のコメントを外し、
+         VIDEO_ID を差し替える。 -->
+    <div class="placeholder" style="margin-top:18px;">
+      トレーラーは準備中です / Trailer coming soon
+    </div>
+    <!--
+    <div class="video-frame" style="margin-top:18px;">
+      <iframe src="https://www.youtube-nocookie.com/embed/VIDEO_ID" title="Desktop Forge trailer"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen></iframe>
+    </div>
+    -->
+    <div class="buttons">
+      <a class="btn" href="https://store.steampowered.com/app/5016990/">Steam ストアページ / Steam page</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 日本語 ============ -->
+<section id="ja">
+  <div class="wrap">
+    <h2>概要 <span class="en">/ Japanese</span></h2>
+
+    <p>『Desktop Forge』は、作業中のデスクトップの片隅に置いたまま進行する、放置型の制作・経営シミュレーションです。</p>
+
+    <p>工房で働く職人はそれぞれ個性と好き嫌いを持ち、プレイヤーが直接指示を出さなくても、許可された仕事の範囲で自律的に素材を集め、加工し、剣を打ちます。同じ作業場や休憩所に居合わせた職人同士は互いに反応し、その日の調子が変わります。</p>
+
+    <p>打ち上がった剣には、切れ味・耐久力・エンチャントの配分と、10種類の型があります。プレイヤーは1本ごとに、売却して資金に変えるか、工房を訪れた冒険者へ譲渡するかを選びます。</p>
+
+    <p>売却で見られるのは配分の均整ですが、冒険では行き先ごとに求められる偏りが異なります。同じ剣が、売れば凡庸で、渡せば最適解になる。この評価軸のねじれが、判断の中心にあります。</p>
+
+    <p>譲渡した剣は冒険者が装備し、冒険の顛末がログとして返ります。報酬と名声を持ち帰ることもあれば、剣が砕け、冒険者が負傷し、あるいは帰らないこともあります。その記録は工房の年表に残り続けます。</p>
+
+    <h3>特徴</h3>
+    <ul>
+      <li>作業中のデスクトップに置いたまま進む、常駐ウィンドウの放置ゲーム</li>
+      <li>個性・好き嫌い・心情が絡み合い、指示ではなく編成で結果を動かす人材管理</li>
+      <li>切れ味・耐久力・エンチャントの配分が異なる10種類の剣の型</li>
+      <li>売却と譲渡で評価軸が食い違う、剣1本ごとの判断</li>
+      <li>冒険者の負傷と死亡が年表に残り、それでも進行は止まらない</li>
+      <li>図鑑の最高記録、工房拡張ツリー、名声による冒険範囲の拡大という長期目標</li>
+    </ul>
+
+    <h3>製品情報</h3>
+    <table class="facts">
+      <tr><th>タイトル</th><td>Desktop Forge</td></tr>
+      <tr><th>ジャンル</th><td>放置・制作経営シミュレーション / デスクトップコンパニオン</td></tr>
+      <tr><th>プラットフォーム</th><td>PC（Windows / Steam）</td></tr>
+      <tr><th>対応言語</th><td>日本語、英語（テキスト・音声なし）</td></tr>
+      <tr><th>発売時期</th><td>2027年前半 予定</td></tr>
+      <tr><th>価格</th><td>未定</td></tr>
+      <tr><th>デモ版</th><td>公開予定</td></tr>
+      <tr><th>開発</th><td>Nulpoyo（個人開発）</td></tr>
+      <tr><th>Steam</th><td><a href="https://store.steampowered.com/app/5016990/">store.steampowered.com/app/5016990/</a></td></tr>
+    </table>
+
+    <h3>開発者</h3>
+    <p>Nulpoyo（ぬるぽよ）。日本の会社員。本業のかたわら、個人でゲームを制作しています。</p>
+    <p>作り手としても遊び手としても「やり込めるゲーム」が好きで、放っておくと難易度が高くなりがちです。『Desktop Forge』でも、デスクトップの片隅で眺めていられる手触りと、数字を詰めていく余地の両立を狙って、バランス調整に最も時間をかけています。</p>
+  </div>
+</section>
+
+<!-- ============ English ============ -->
+<section id="en" class="en-block">
+  <div class="wrap">
+    <h2>About <span class="en">/ English</span></h2>
+
+    <p>Desktop Forge is an idle crafting and management sim that runs in a small window at the edge of your desktop while you work.</p>
+
+    <p>Your smiths each have their own traits and likes, and they work on their own. You never assign tasks directly — you decide which jobs each of them is allowed to take, and let the personalities collide. Who ends up at the same workbench changes what comes out of it.</p>
+
+    <p>Every finished sword has a split between edge, durability and enchantment, across ten distinct blade types. For each one, you choose: sell it for cash, or give it to an adventurer who stops by.</p>
+
+    <p>Buyers pay for balance. Dungeons reward specialization, and each destination rewards a different one. The same sword can be mediocre on the market and perfect for the road — that tension is the core of the game.</p>
+
+    <p>A sword you hand over comes back as an adventure log, with coin and renown. Or it comes back broken, with its bearer wounded. Or it doesn't come back at all. Either way it goes into your workshop's chronicle, and you decide what to forge next.</p>
+
+    <h3>Key features</h3>
+    <ul>
+      <li>An idle game in a small always-on window, made to sit at the edge of your working desktop</li>
+      <li>Smiths with traits, likes and moods — you shape the roster, not the orders</li>
+      <li>Ten blade types, each with a different split between edge, durability and enchantment</li>
+      <li>Sell or gift: the market and the road value the same sword differently</li>
+      <li>Adventurers get wounded and die, and it stays in your workshop's chronicle</li>
+      <li>Long-term goals: codex records, a workshop upgrade tree, and renown that opens new regions</li>
+    </ul>
+
+    <h3>Fact sheet</h3>
+    <table class="facts">
+      <tr><th>Title</th><td>Desktop Forge</td></tr>
+      <tr><th>Genre</th><td>Idle crafting &amp; management sim / desktop companion</td></tr>
+      <tr><th>Platform</th><td>PC (Windows / Steam)</td></tr>
+      <tr><th>Languages</th><td>English, Japanese (text; no voice acting)</td></tr>
+      <tr><th>Release</th><td>H1 2027</td></tr>
+      <tr><th>Price</th><td>TBA</td></tr>
+      <tr><th>Demo</th><td>Planned</td></tr>
+      <tr><th>Developer</th><td>Nulpoyo (solo)</td></tr>
+      <tr><th>Steam</th><td><a href="https://store.steampowered.com/app/5016990/">store.steampowered.com/app/5016990/</a></td></tr>
+    </table>
+
+    <h3>Developer</h3>
+    <p>Nulpoyo. A solo developer based in Japan, making games alongside a full-time office job.</p>
+    <p>I like games with a lot to chew on — which means mine tend to end up harder than I intended. Most of the work on Desktop Forge has gone into balancing: keeping it something you can leave running at the edge of your screen, while still leaving numbers worth pushing on.</p>
+  </div>
+</section>
+
+<!-- ============ 素材 / Media ============ -->
+<section id="media">
+  <div class="wrap">
+    <h2>スクリーンショット <span class="en">/ Screenshots</span></h2>
+    <p class="en-block">クリックで原寸。Click for full resolution.</p>
+
+    <!-- 画像を assets/images/ へ置いたら、対応する figure のコメントを外す。
+         ファイル名は marketing/施策/撮影リスト.md の命名に合わせる。 -->
+    <div class="grid" id="shots">
+      <figure><div class="placeholder">desktop_overview_en.png<br>準備中 / coming soon</div><figcaption>Running at the edge of your desktop</figcaption></figure>
+      <figure><div class="placeholder">workshop_map_en.png<br>準備中 / coming soon</div><figcaption>The workshop</figcaption></figure>
+      <figure><div class="placeholder">appraisal_en.png<br>準備中 / coming soon</div><figcaption>Appraising a finished sword</figcaption></figure>
+      <figure><div class="placeholder">adventure_log_en.png<br>準備中 / coming soon</div><figcaption>An adventure log</figcaption></figure>
+      <figure><div class="placeholder">person_detail_en.png<br>準備中 / coming soon</div><figcaption>Smith details: traits, likes, mood</figcaption></figure>
+      <figure><div class="placeholder">codex_en.png<br>準備中 / coming soon</div><figcaption>The codex</figcaption></figure>
+      <!--
+      <figure>
+        <a href="assets/images/desktop_overview_en.png">
+          <img src="assets/images/desktop_overview_en.png" alt="Desktop Forge running at the edge of a desktop">
+        </a>
+        <figcaption>Running at the edge of your desktop</figcaption>
+      </figure>
+      -->
+    </div>
+
+    <h2 style="margin-top:44px;">GIF <span class="en">/ Animated</span></h2>
+    <p class="en-block">記事や投稿にそのままお使いいただけます。Free to embed as-is.</p>
+    <div class="grid" id="gifs">
+      <figure><div class="placeholder">loop_desktop.gif<br>準備中 / coming soon</div><figcaption>At the edge of the desktop</figcaption></figure>
+      <figure><div class="placeholder">loop_interact.gif<br>準備中 / coming soon</div><figcaption>Smiths reacting to each other</figcaption></figure>
+      <figure><div class="placeholder">loop_appraisal.gif<br>準備中 / coming soon</div><figcaption>Appraisal</figcaption></figure>
+      <figure><div class="placeholder">loop_adventure.gif<br>準備中 / coming soon</div><figcaption>An adventurer returns</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ダウンロード / Downloads ============ -->
+<section id="downloads">
+  <div class="wrap">
+    <h2>ダウンロード <span class="en">/ Downloads</span></h2>
+
+    <div class="buttons">
+      <!-- zip を downloads/ へ置いたら href を有効にする -->
+      <a class="btn ghost" href="downloads/">一括ダウンロード（zip） / Full press kit</a>
+      <a class="btn ghost" href="fact_sheet_ja.txt">fact_sheet_ja.txt</a>
+      <a class="btn ghost" href="fact_sheet_en.txt">fact_sheet_en.txt</a>
+    </div>
+
+    <h3>素材の利用について</h3>
+    <p>本プレスキットに含まれる画像・動画・テキストは、記事・動画・配信でのご使用が自由です。実況・収益化を含む配信も許可しています。事前・事後のご連絡は不要です。特定の場面のキャプチャや追加の素材が必要でしたら、お気軽にお申し付けください。</p>
+
+    <h3 class="en-block">Usage permission</h3>
+    <p class="en-block">All assets in this press kit are free to use in articles, videos and streams, including monetized content. No permission or notification needed. If you need a specific scene captured or a different asset, just ask.</p>
+  </div>
+</section>
+
+<!-- ============ 連絡先 / Contact ============ -->
+<section id="contact">
+  <div class="wrap">
+    <h2>連絡先 <span class="en">/ Contact</span></h2>
+    <table class="facts">
+      <tr><th>開発 / Developer</th><td>Nulpoyo（個人開発 / solo）</td></tr>
+      <tr><th>メール / Email</th><td><a href="mailto:xz585a@gmail.com">xz585a@gmail.com</a></td></tr>
+      <tr><th>Steam</th><td><a href="https://store.steampowered.com/app/5016990/">store.steampowered.com/app/5016990/</a></td></tr>
+    </table>
+    <div class="note">
+      レビュー用のキー、追加のスクリーンショット、特定の場面の撮影などは、上記メールへお気軽にご連絡ください。<br>
+      Review keys, extra screenshots and custom captures are available on request — just email me.
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    Desktop Forge — Press Kit &nbsp;/&nbsp; © Nulpoyo
+  </div>
+</footer>
+
+</body>
+</html>
