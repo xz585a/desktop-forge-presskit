@@ -81,7 +81,7 @@
   .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 14px; margin-top: 18px; }
   figure { margin: 0; }
   figure a { display: block; }
-  figure img {
+  figure img, figure video {
     width: 100%; display: block; border: 1px solid var(--line); border-radius: var(--radius);
     background: var(--bg-alt);
   }
@@ -140,10 +140,12 @@
 <section id="trailer">
   <div class="wrap">
     <h2>トレーラー <span class="en">/ Trailer</span></h2>
-    <!-- TODO: YouTube に公開したら、下の placeholder を消して video-frame のコメントを外し、
-         VIDEO_ID を差し替える。 -->
-    <div class="placeholder" style="margin-top:18px;">
-      トレーラーは準備中です / Trailer coming soon
+    <!-- YouTube に公開したら、下の <video> を video-frame の iframe へ差し替える。
+         mp4 の直接ダウンロードは残しておく（編集部が使う）。 -->
+    <div style="margin-top:18px;">
+      <video src="assets/video/DesktopForge_Trailer.mp4" controls preload="metadata"
+             poster="assets/images/desktop_center_en.png"
+             style="width:100%; display:block; border:1px solid var(--line); border-radius:var(--radius); background:#000;"></video>
     </div>
     <!--
     <div class="video-frame" style="margin-top:18px;">
@@ -154,6 +156,7 @@
     -->
     <div class="buttons">
       <a class="btn" href="https://store.steampowered.com/app/5016990/">Steam ストアページ / Steam page</a>
+      <a class="btn ghost" href="assets/video/DesktopForge_Trailer.mp4" download>トレーラー mp4 をダウンロード / Download trailer (66 MB)</a>
     </div>
   </div>
 </section>
@@ -194,6 +197,7 @@
       <tr><th>デモ版</th><td>公開予定</td></tr>
       <tr><th>開発</th><td>Nulpoyo（個人開発）</td></tr>
       <tr><th>Steam</th><td><a href="https://store.steampowered.com/app/5016990/">store.steampowered.com/app/5016990/</a></td></tr>
+      <tr><th>トレーラー</th><td><a href="#trailer">ページ上部</a>（mp4 ダウンロード可）</td></tr>
     </table>
 
     <h3>開発者</h3>
@@ -238,6 +242,7 @@
       <tr><th>Demo</th><td>Planned</td></tr>
       <tr><th>Developer</th><td>Nulpoyo (solo)</td></tr>
       <tr><th>Steam</th><td><a href="https://store.steampowered.com/app/5016990/">store.steampowered.com/app/5016990/</a></td></tr>
+      <tr><th>Trailer</th><td><a href="#trailer">Top of this page</a> (mp4 available)</td></tr>
     </table>
 
     <h3>Developer</h3>
@@ -252,32 +257,81 @@
     <h2>スクリーンショット <span class="en">/ Screenshots</span></h2>
     <p class="en-block">クリックで原寸。Click for full resolution.</p>
 
-    <!-- 画像を assets/images/ へ置いたら、対応する figure のコメントを外す。
-         ファイル名は marketing/施策/撮影リスト.md の命名に合わせる。 -->
+    <!-- 画像は assets/images/。1920x1080 の無加工 PNG。
+         日本語版 UI のスクリーンショットを追加したら、_ja のファイルを同じ形で並べる。 -->
     <div class="grid" id="shots">
-      <figure><div class="placeholder">desktop_overview_en.png<br>準備中 / coming soon</div><figcaption>Running at the edge of your desktop</figcaption></figure>
-      <figure><div class="placeholder">workshop_map_en.png<br>準備中 / coming soon</div><figcaption>The workshop</figcaption></figure>
-      <figure><div class="placeholder">appraisal_en.png<br>準備中 / coming soon</div><figcaption>Appraising a finished sword</figcaption></figure>
-      <figure><div class="placeholder">adventure_log_en.png<br>準備中 / coming soon</div><figcaption>An adventure log</figcaption></figure>
-      <figure><div class="placeholder">person_detail_en.png<br>準備中 / coming soon</div><figcaption>Smith details: traits, likes, mood</figcaption></figure>
-      <figure><div class="placeholder">codex_en.png<br>準備中 / coming soon</div><figcaption>The codex</figcaption></figure>
-      <!--
       <figure>
-        <a href="assets/images/desktop_overview_en.png">
-          <img src="assets/images/desktop_overview_en.png" alt="Desktop Forge running at the edge of a desktop">
-        </a>
-        <figcaption>Running at the edge of your desktop</figcaption>
+        <a href="assets/images/desktop_corner_en.png"><img src="assets/images/desktop_corner_en.png" alt="Desktop Forge running in the bottom-right corner of a desktop" loading="lazy"></a>
+        <figcaption>At its smallest, in the corner of your desktop</figcaption>
       </figure>
-      -->
+      <figure>
+        <a href="assets/images/desktop_center_en.png"><img src="assets/images/desktop_center_en.png" alt="The Desktop Forge window on a desktop" loading="lazy"></a>
+        <figcaption>The workshop window</figcaption>
+      </figure>
+      <figure>
+        <a href="assets/images/workshop_moods_en.png"><img src="assets/images/workshop_moods_en.png" alt="Smiths reacting to each other with mood icons" loading="lazy"></a>
+        <figcaption>Smiths reacting to each other</figcaption>
+      </figure>
+      <figure>
+        <a href="assets/images/workshop_night_en.png"><img src="assets/images/workshop_night_en.png" alt="A busy workshop at night" loading="lazy"></a>
+        <figcaption>A busy workshop at night</figcaption>
+      </figure>
+      <figure>
+        <a href="assets/images/jobs_person_detail_en.png"><img src="assets/images/jobs_person_detail_en.png" alt="Job permissions and smith details" loading="lazy"></a>
+        <figcaption>Job permissions and smith details</figcaption>
+      </figure>
+      <figure>
+        <a href="assets/images/sword_crafting_en.png"><img src="assets/images/sword_crafting_en.png" alt="A sword being forged, with its parameters" loading="lazy"></a>
+        <figcaption>A sword taking shape</figcaption>
+      </figure>
+      <figure>
+        <a href="assets/images/warehouse_appraisal_en.png"><img src="assets/images/warehouse_appraisal_en.png" alt="Warehouse and sword appraisal" loading="lazy"></a>
+        <figcaption>Warehouse and appraisal</figcaption>
+      </figure>
+      <figure>
+        <a href="assets/images/codex_en.png"><img src="assets/images/codex_en.png" alt="The codex of forged swords" loading="lazy"></a>
+        <figcaption>The codex</figcaption>
+      </figure>
+      <figure>
+        <a href="assets/images/expansion_tree_en.png"><img src="assets/images/expansion_tree_en.png" alt="The workshop expansion tree" loading="lazy"></a>
+        <figcaption>Workshop expansion tree</figcaption>
+      </figure>
+      <figure>
+        <a href="assets/images/recruit_en.png"><img src="assets/images/recruit_en.png" alt="The recruitment screen" loading="lazy"></a>
+        <figcaption>Recruiting a smith</figcaption>
+      </figure>
+      <figure>
+        <a href="assets/images/info_en.png"><img src="assets/images/info_en.png" alt="The in-game info screen" loading="lazy"></a>
+        <figcaption>In-game info</figcaption>
+      </figure>
     </div>
 
-    <h2 style="margin-top:44px;">GIF <span class="en">/ Animated</span></h2>
-    <p class="en-block">記事や投稿にそのままお使いいただけます。Free to embed as-is.</p>
+    <h2 style="margin-top:44px;">ループ動画 <span class="en">/ Loops</span></h2>
+    <p class="en-block">
+      記事や投稿にそのままお使いいただけます。GIF 版が必要な場合はご連絡ください。<br>
+      Short silent loops, free to embed as-is. Ask if you need them as GIFs.
+    </p>
     <div class="grid" id="gifs">
-      <figure><div class="placeholder">loop_desktop.gif<br>準備中 / coming soon</div><figcaption>At the edge of the desktop</figcaption></figure>
-      <figure><div class="placeholder">loop_interact.gif<br>準備中 / coming soon</div><figcaption>Smiths reacting to each other</figcaption></figure>
-      <figure><div class="placeholder">loop_appraisal.gif<br>準備中 / coming soon</div><figcaption>Appraisal</figcaption></figure>
-      <figure><div class="placeholder">loop_adventure.gif<br>準備中 / coming soon</div><figcaption>An adventurer returns</figcaption></figure>
+      <figure>
+        <video src="assets/gifs/loop_overview.mp4" autoplay loop muted playsinline preload="metadata"></video>
+        <figcaption>The workshop at a glance — <a href="assets/gifs/loop_overview.mp4">download</a></figcaption>
+      </figure>
+      <figure>
+        <video src="assets/gifs/loop_workshop.mp4" autoplay loop muted playsinline preload="metadata"></video>
+        <figcaption>Smiths at work — <a href="assets/gifs/loop_workshop.mp4">download</a></figcaption>
+      </figure>
+      <figure>
+        <video src="assets/gifs/loop_interact.mp4" autoplay loop muted playsinline preload="metadata"></video>
+        <figcaption>Moods and reactions — <a href="assets/gifs/loop_interact.mp4">download</a></figcaption>
+      </figure>
+      <figure>
+        <video src="assets/gifs/loop_appraisal.mp4" autoplay loop muted playsinline preload="metadata"></video>
+        <figcaption>Appraising a finished sword — <a href="assets/gifs/loop_appraisal.mp4">download</a></figcaption>
+      </figure>
+      <figure>
+        <video src="assets/gifs/loop_traits.mp4" autoplay loop muted playsinline preload="metadata"></video>
+        <figcaption>Traits and likes — <a href="assets/gifs/loop_traits.mp4">download</a></figcaption>
+      </figure>
     </div>
   </div>
 </section>
@@ -288,11 +342,15 @@
     <h2>ダウンロード <span class="en">/ Downloads</span></h2>
 
     <div class="buttons">
-      <!-- zip を downloads/ へ置いたら href を有効にする -->
-      <a class="btn ghost" href="downloads/">一括ダウンロード（zip） / Full press kit</a>
+      <a class="btn" href="downloads/DesktopForge_PressKit.zip" download>一括ダウンロード zip / Full press kit (22 MB)</a>
+      <a class="btn ghost" href="assets/video/DesktopForge_Trailer.mp4" download>トレーラー mp4 / Trailer (66 MB)</a>
       <a class="btn ghost" href="fact_sheet_ja.txt">fact_sheet_ja.txt</a>
       <a class="btn ghost" href="fact_sheet_en.txt">fact_sheet_en.txt</a>
     </div>
+    <p class="en-block" style="margin-top:14px; font-size:.9rem;">
+      zip にはスクリーンショット11枚（1920×1080 PNG）、ループ動画5点、ファクトシート（日英）が入っています。トレーラーは容量が大きいため別ダウンロードです。<br>
+      The zip contains 11 screenshots (1920×1080 PNG), 5 short loops, and both fact sheets. The trailer is a separate download.
+    </p>
 
     <h3>素材の利用について</h3>
     <p>本プレスキットに含まれる画像・動画・テキストは、記事・動画・配信でのご使用が自由です。実況・収益化を含む配信も許可しています。事前・事後のご連絡は不要です。特定の場面のキャプチャや追加の素材が必要でしたら、お気軽にお申し付けください。</p>

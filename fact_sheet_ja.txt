@@ -14,7 +14,8 @@ https://store.steampowered.com/app/5016990/
 デモ版:         公開予定
 開発:           Nulpoyo（個人開発）
 Steam:          https://store.steampowered.com/app/5016990/
-トレーラー:     （準備中）
+プレスキット:   https://xz585a.github.io/desktop-forge-presskit/
+トレーラー:     プレスキットのページ上部（mp4 ダウンロード可）
 
 ================================================================
 概要

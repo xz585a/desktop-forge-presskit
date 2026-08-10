@@ -14,7 +14,8 @@ Price:        TBA
 Demo:         Planned
 Developer:    Nulpoyo (solo)
 Steam:        https://store.steampowered.com/app/5016990/
-Trailer:      (coming soon)
+Press kit:    https://xz585a.github.io/desktop-forge-presskit/
+Trailer:      Top of the press kit page (mp4 available)
 
 ================================================================
 ABOUT

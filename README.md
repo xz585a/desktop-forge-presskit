@@ -23,6 +23,40 @@
 ファイル名は、ゲーム本体側の `marketing/施策/撮影リスト.md` の命名に合わせる。
 例: `desktop_overview_ja.png` / `loop_appraisal.gif`。
 
+## 現在の収録物
+
+- スクリーンショット11枚（1920×1080 PNG、**英語UIのみ**）
+- ループ動画5点（mp4、無音）
+- トレーラー（mp4、66MB）
+- ファクトシート 日英
+- 一括ダウンロード用 zip（22MB。トレーラーは容量の都合で含めない）
+
+不足しているもの。
+
+- **日本語UIのスクリーンショット**（国内15媒体向け。海外8媒体には英語版で足りる）
+- **冒険ログ・剣の譲渡の画**。プレスリリースの一行目で使っている「渡した剣が帰ってこない」を裏付ける画がまだ無い
+- ロゴ（透過PNG）。現状はゲームアイコンを流用している
+
+## zip の作り直し
+
+素材を追加・差し替えたら zip も作り直す。
+
+```bash
+python - <<'EOF'
+import zipfile, os
+out = "downloads/DesktopForge_PressKit.zip"
+os.path.exists(out) and os.remove(out)
+z = zipfile.ZipFile(out, "w", zipfile.ZIP_DEFLATED)
+for f in ["fact_sheet_ja.txt", "fact_sheet_en.txt"]:
+    z.write(f, "DesktopForge_PressKit/" + f)
+for sub in ["assets/images", "assets/gifs"]:
+    for f in sorted(os.listdir(sub)):
+        if not f.startswith("."):
+            z.write(os.path.join(sub, f), "DesktopForge_PressKit/" + sub.split("/")[1] + "/" + f)
+z.close()
+EOF
+```
+
 ## 素材を追加したときの手順
 
 1. ファイルを `assets/` の該当ディレクトリへ置く
