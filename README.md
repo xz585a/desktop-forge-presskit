@@ -36,8 +36,12 @@
 └── downloads/          一括ダウンロード用の zip
 ```
 
-ファイル名は、ゲーム本体側の `marketing/施策/撮影リスト.md` の命名に合わせる。
-例: `desktop_overview_ja.png` / `loop_appraisal.gif`。
+場面の番号と名前は、ゲーム本体側の `marketing/施策/撮影リスト.md` の表に合わせる。
+例: `03_appraisal_en.png` / `loop_appraisal.mp4`。
+
+**言語の書き方だけは手元と違う。**ここは `_en` / `_ja`、手元の素材フォルダは
+Steam の言語コードに合わせた `_english` / `_japanese`（`03_鑑定画面_english.png`）。
+**ここのファイル名は公開URLとして固定しているので変えない。**持ち込むときにリネームする。
 
 ## 現在の収録物
 
