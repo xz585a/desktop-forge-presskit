@@ -32,8 +32,8 @@
 ├── assets/
 │   ├── images/         スクリーンショット、ロゴ、カプセル画像
 │   ├── gifs/           GIF・ループ動画
-│   └── video/          トレーラーの mp4（圧縮したもの）
-└── downloads/          一括ダウンロード用の zip
+│   └── video/          トレーラーの mp4  ※Git 管理外
+└── downloads/          一括ダウンロード用の zip  ※Git 管理外
 ```
 
 場面の番号と名前は、ゲーム本体側の `marketing/施策/撮影リスト.md` の表に合わせる。
@@ -57,6 +57,30 @@ Steam の言語コードに合わせた `_english` / `_japanese`（`03_鑑定画
 不足しているもの。
 
 - **ロゴ（透過PNG）。** 現状はゲームアイコンを流用している
+
+## 配布アセットの置き場
+
+**zip とトレーラーの mp4 は、リポジトリに入れない。** GitHub Releases の `assets`
+タグへ置き、ページからはそこへリンクする。
+
+```text
+https://github.com/xz585a/desktop-forge-presskit/releases/download/assets/DesktopForge_PressKit.zip
+https://github.com/xz585a/desktop-forge-presskit/releases/download/assets/DesktopForge_Trailer.mp4
+```
+
+理由は、**この2つだけが繰り返し差し替わるうえに大きい**こと。Git はバイナリの差分を
+持てないので、作り直すたびに丸ごと履歴へ積み上がり、あとから減らせない。
+実際、zip は4回作り直した時点で履歴に129MB、トレーラーは1回の差し替えで137MB を占めていた。
+
+更新は**同じファイル名で上書き**する。URL が変わらない。
+
+```bash
+gh release upload assets downloads/DesktopForge_PressKit.zip --clobber
+```
+
+スクリーンショットの PNG とループ動画は、これまでどおり Git で管理する。
+配布物そのもので、差し替えの頻度も低いため。**ただしコミットするのは公開する確定版だけ**にする
+（撮り直しの途中経過を入れると、上と同じことが起きる）。
 
 ### 画像形式と、原寸／縮小版の分担
 
@@ -83,7 +107,8 @@ python build_thumbs.py
 
 ## zip の作り直し
 
-素材を追加・差し替えたら zip も作り直す。
+素材を追加・差し替えたら zip も作り直し、**Releases へ上書きアップロードする**（下のコマンドの最終行）。
+zip 自体はコミットされない。
 
 ```bash
 python - <<'EOF'
@@ -99,6 +124,7 @@ for sub in ["assets/images", "assets/gifs"]:
             z.write(os.path.join(sub, f), "DesktopForge_PressKit/" + sub.split("/")[1] + "/" + f)
 z.close()
 EOF
+gh release upload assets downloads/DesktopForge_PressKit.zip --clobber
 ```
 
 ## 素材を追加したときの手順
@@ -106,19 +132,20 @@ EOF
 1. ファイルを `assets/images/`（原寸）へ置く。命名は `<番号>_<名前>_<言語>.png`
 2. `python build_thumbs.py` を実行して縮小版を作り直す
 3. `index.html` の対応する `<figure>` のパスを確認する（拡張子が変わった場合は直す）
-4. zip を作り直す（下記）
+4. zip を作り直し、Releases へ上書きアップロードする（下記）
 5. コミットして push する。GitHub Pages への反映は数十秒〜数分
 
 ループ動画は `assets/gifs/loop_<場面>.mp4` が英語版、`loop_<場面>_ja.mp4` が日本語版。
 **日本語版がある場面は `<video>` を `class="l-ja"` / `class="l-en"` の対で置く**（`figcaption` の
 ダウンロードリンクも言語ごとに向き先を変える）。日本語版がない場面は `<video>` 1つのままでよい。
 
-トレーラーを YouTube に公開したら、`index.html` の `#trailer` セクションで
-placeholder を消し、`video-frame` のコメントを外して `VIDEO_ID` を差し替える。
+トレーラーを YouTube に公開したら、`index.html` の `#trailer` セクションの `<video>` を
+iframe 埋め込みへ差し替える。**mp4 のダウンロードリンクは残す**（編集部が使う）。
+再生を YouTube に任せられるので、Releases の mp4 はダウンロード専用になる。
 
 ## 制約
 
-- **1ファイル 100MB まで。** トレーラーの mp4 は圧縮して 20〜30MB に収める。
-  原寸の動画はここへ入れず、YouTube の埋め込みで見せる
+- **1ファイル 100MB まで**（Releases 側は 2GB まで）。ページに直接置く mp4 は
+  20〜30MB に収め、原寸は Releases か YouTube へ逃がす
 - サイト全体で 1GB まで
 - **このリポジトリはパブリック。** 未公開の情報を含むファイルを置かない
