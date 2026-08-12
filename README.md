@@ -30,7 +30,8 @@
 ├── fact_sheet_ja.txt   日本語のファクトシート（配布用テキスト）
 ├── fact_sheet_en.txt   英語のファクトシート
 ├── assets/
-│   ├── images/         スクリーンショット、ロゴ、カプセル画像
+│   ├── images/         スクリーンショット
+│   ├── branding/       ロゴ・カプセル画像（Steam へ出したものと同じ原寸）
 │   ├── gifs/           GIF・ループ動画
 │   └── video/          トレーラーの mp4  ※Git 管理外
 └── downloads/          一括ダウンロード用の zip  ※Git 管理外
@@ -50,13 +51,13 @@ Steam の言語コードに合わせた `_english` / `_japanese`（`03_鑑定画
 - ループ動画 **7場面 = 11ファイル**（mp4、無音）
   - 鑑定・個性・冒険者の出撃・冒険ログの4場面は、`_ja` を付けた日本語UI版も置いてあり、言語切り替えに連動する
   - 全体像・工房作業・感情アイコンの3場面は文字が出ないため、日英で同じファイルを使う
-- トレーラー（mp4、71MB。2026-08-12 の英語版）
+- トレーラー **日英2本**（mp4、各95秒。字幕だけが異なり、映像内のゲーム UI は両方とも英語）
+  - `DesktopForge_Trailer.mp4` が英語字幕、`DesktopForge_Trailer_ja.mp4` が日本語字幕
+- ロゴ（透過 PNG）とカプセル画像6点（`assets/branding/`。Steam へ出したものと同じ原寸）
 - ファクトシート 日英
-- 一括ダウンロード用 zip（47MB。トレーラーは容量の都合で含めない）
+- 一括ダウンロード用 zip（49MB。トレーラーは容量の都合で含めない）
 
-不足しているもの。
-
-- **ロゴ（透過PNG）。** 現状はゲームアイコンを流用している
+デモ版のカプセル一式はゲーム本体側の `release/banner/steam/demo/` にある。**デモ公開（第2弾）まで載せない。**
 
 ## 配布アセットの置き場
 
@@ -66,6 +67,7 @@ Steam の言語コードに合わせた `_english` / `_japanese`（`03_鑑定画
 ```text
 https://github.com/xz585a/desktop-forge-presskit/releases/download/assets/DesktopForge_PressKit.zip
 https://github.com/xz585a/desktop-forge-presskit/releases/download/assets/DesktopForge_Trailer.mp4
+https://github.com/xz585a/desktop-forge-presskit/releases/download/assets/DesktopForge_Trailer_ja.mp4
 ```
 
 理由は、**この2つだけが繰り返し差し替わるうえに大きい**こと。Git はバイナリの差分を
@@ -118,7 +120,7 @@ os.path.exists(out) and os.remove(out)
 z = zipfile.ZipFile(out, "w", zipfile.ZIP_DEFLATED)
 for f in ["fact_sheet_ja.txt", "fact_sheet_en.txt"]:
     z.write(f, "DesktopForge_PressKit/" + f)
-for sub in ["assets/images", "assets/gifs"]:
+for sub in ["assets/images", "assets/gifs", "assets/branding"]:
     for f in sorted(os.listdir(sub)):
         if not f.startswith("."):
             z.write(os.path.join(sub, f), "DesktopForge_PressKit/" + sub.split("/")[1] + "/" + f)

@@ -43,8 +43,13 @@
     padding: 44px 0 36px;
     text-align: center;
   }
-  header img.logo { width: 96px; height: 96px; image-rendering: pixelated; }
+  header img.logo { width: 100%; max-width: 420px; height: auto; display: block; margin: 0 auto; }
   h1 { font-size: 2.1rem; margin: 14px 0 6px; letter-spacing: .04em; }
+  /* ロゴ画像がタイトルを担うので、h1 は読み上げと検索向けに残して視覚的にだけ隠す */
+  .visually-hidden {
+    position: absolute; width: 1px; height: 1px; margin: -1px;
+    padding: 0; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+  }
   .tagline { color: var(--fg-dim); margin: 0 auto; max-width: 620px; }
 
   .switch { margin-top: 24px; }
@@ -116,8 +121,8 @@
 
 <header>
   <div class="wrap">
-    <img class="logo" src="assets/images/desktop_forge_icon.png" alt="Desktop Forge">
-    <h1>Desktop Forge</h1>
+    <img class="logo" src="assets/branding/logo_1280x720.png" alt="Desktop Forge">
+    <h1 class="visually-hidden">Desktop Forge</h1>
     <p class="tagline l-ja">デスクトップの片隅に置く、小さな鍛冶工房。打った剣は売るか、冒険者へ渡すか。渡した剣は、帰ってこないこともある。</p>
     <p class="tagline l-en">A tiny forge that lives in the corner of your desktop. Sell each blade, or hand it to a passing adventurer — some of them never come back.</p>
 
@@ -143,18 +148,27 @@
     <h2 class="l-ja">トレーラー</h2>
     <h2 class="l-en">Trailer</h2>
 
-    <!-- YouTube に公開したら、この <video> を iframe 埋め込みへ差し替える。
+    <!-- YouTube に公開したら、この <video> を iframe 埋め込みへ差し替える（日英とも）。
          mp4 の直接ダウンロードは編集部が使うので残しておく。
-         日本語字幕版ができたら l-ja / l-en で出し分ける。 -->
+         字幕だけが日英で異なる。映像内のゲーム UI は両方とも英語。 -->
     <div style="margin-top:18px;">
-      <video src="https://github.com/xz585a/desktop-forge-presskit/releases/download/assets/DesktopForge_Trailer.mp4" controls preload="metadata"
+      <video class="l-ja" src="https://github.com/xz585a/desktop-forge-presskit/releases/download/assets/DesktopForge_Trailer_ja.mp4" controls preload="metadata"
+             poster="assets/images/02_workshop_ja.png"
+             style="width:100%; display:block; border:1px solid var(--line); border-radius:var(--radius); background:#000;"></video>
+      <video class="l-en" src="https://github.com/xz585a/desktop-forge-presskit/releases/download/assets/DesktopForge_Trailer.mp4" controls preload="metadata"
              poster="assets/images/02_workshop_en.png"
              style="width:100%; display:block; border:1px solid var(--line); border-radius:var(--radius); background:#000;"></video>
     </div>
 
+    <p class="lead l-ja" style="margin-top:12px;">日本語字幕版です。字幕以外は英語版と同じ映像で、ゲーム内の UI は英語表示のままです。英語字幕版は上の English で切り替わります。</p>
+    <p class="lead l-en" style="margin-top:12px;">English-subtitled cut. A Japanese-subtitled version is available from the 日本語 switch above.</p>
+
     <div class="buttons">
       <a class="btn" href="https://store.steampowered.com/app/5016990/"><span class="l-ja">Steam ストアページ</span><span class="l-en">Steam page</span></a>
-      <a class="btn ghost" href="https://github.com/xz585a/desktop-forge-presskit/releases/download/assets/DesktopForge_Trailer.mp4" download><span class="l-ja">トレーラー mp4 をダウンロード（71MB）</span><span class="l-en">Download trailer mp4 (71 MB)</span></a>
+      <a class="btn ghost l-ja" href="https://github.com/xz585a/desktop-forge-presskit/releases/download/assets/DesktopForge_Trailer_ja.mp4" download>トレーラー mp4 をダウンロード・日本語字幕（72MB）</a>
+      <a class="btn ghost l-ja" href="https://github.com/xz585a/desktop-forge-presskit/releases/download/assets/DesktopForge_Trailer.mp4" download>英語字幕版（71MB）</a>
+      <a class="btn ghost l-en" href="https://github.com/xz585a/desktop-forge-presskit/releases/download/assets/DesktopForge_Trailer.mp4" download>Download trailer mp4 (71 MB)</a>
+      <a class="btn ghost l-en" href="https://github.com/xz585a/desktop-forge-presskit/releases/download/assets/DesktopForge_Trailer_ja.mp4" download>Japanese-subtitled cut (72 MB)</a>
     </div>
   </div>
 </section>
@@ -340,6 +354,42 @@
         <figcaption><span class="l-ja">冒険ログ。帰還と、その顛末 — <a href="assets/gifs/loop_adventure_log_ja.mp4">ダウンロード</a></span><span class="l-en">The adventure log: the return, and how it went — <a href="assets/gifs/loop_adventure_log.mp4">download</a></span></figcaption>
       </figure>
     </div>
+
+    <h2 style="margin-top:44px;" class="l-ja">ロゴ・キーアート</h2>
+    <h2 style="margin-top:44px;" class="l-en">Logo &amp; key art</h2>
+    <p class="lead l-ja">Steam 用に書き出した原寸です。ロゴは背景が透過した PNG。クリックで原寸が開きます。</p>
+    <p class="lead l-en">Originals as exported for Steam. The logo is a PNG with a transparent background. Click for the full-size file.</p>
+
+    <div class="grid" id="branding">
+      <figure>
+        <a href="assets/branding/logo_1280x720.png"><img src="assets/branding/logo_1280x720.png" alt="Desktop Forge logo, transparent PNG" loading="lazy"></a>
+        <figcaption><span class="l-ja">ロゴ（透過 PNG、1280×720）</span><span class="l-en">Logo (transparent PNG, 1280×720)</span></figcaption>
+      </figure>
+      <figure>
+        <a href="assets/branding/capsule_main_1232x706.png"><img src="assets/branding/capsule_main_1232x706.png" alt="Key art" loading="lazy"></a>
+        <figcaption><span class="l-ja">キーアート / メインカプセル（1232×706）</span><span class="l-en">Key art / main capsule (1232×706)</span></figcaption>
+      </figure>
+      <figure>
+        <a href="assets/branding/capsule_header_920x430.png"><img src="assets/branding/capsule_header_920x430.png" alt="Header capsule" loading="lazy"></a>
+        <figcaption><span class="l-ja">ヘッダーカプセル（920×430）</span><span class="l-en">Header capsule (920×430)</span></figcaption>
+      </figure>
+      <figure>
+        <a href="assets/branding/capsule_vertical_748x896.png"><img src="assets/branding/capsule_vertical_748x896.png" alt="Vertical capsule" loading="lazy"></a>
+        <figcaption><span class="l-ja">縦型カプセル（748×896）</span><span class="l-en">Vertical capsule (748×896)</span></figcaption>
+      </figure>
+      <figure>
+        <a href="assets/branding/capsule_library_600x900.png"><img src="assets/branding/capsule_library_600x900.png" alt="Library capsule" loading="lazy"></a>
+        <figcaption><span class="l-ja">ライブラリカプセル（600×900）</span><span class="l-en">Library capsule (600×900)</span></figcaption>
+      </figure>
+      <figure>
+        <a href="assets/branding/capsule_small_462x174.png"><img src="assets/branding/capsule_small_462x174.png" alt="Small capsule" loading="lazy"></a>
+        <figcaption><span class="l-ja">小型カプセル（462×174）</span><span class="l-en">Small capsule (462×174)</span></figcaption>
+      </figure>
+      <figure>
+        <a href="assets/branding/hero_3840x1240.png"><img src="assets/branding/hero_3840x1240.png" alt="Hero banner" loading="lazy"></a>
+        <figcaption><span class="l-ja">ヒーローバナー（3840×1240）</span><span class="l-en">Hero banner (3840×1240)</span></figcaption>
+      </figure>
+    </div>
   </div>
 </section>
 
@@ -350,14 +400,14 @@
     <h2 class="l-en">Downloads</h2>
 
     <div class="buttons">
-      <a class="btn" href="https://github.com/xz585a/desktop-forge-presskit/releases/download/assets/DesktopForge_PressKit.zip" download><span class="l-ja">一括ダウンロード zip（47MB）</span><span class="l-en">Full press kit, zip (47 MB)</span></a>
+      <a class="btn" href="https://github.com/xz585a/desktop-forge-presskit/releases/download/assets/DesktopForge_PressKit.zip" download><span class="l-ja">一括ダウンロード zip（49MB）</span><span class="l-en">Full press kit, zip (49 MB)</span></a>
       <a class="btn ghost" href="https://github.com/xz585a/desktop-forge-presskit/releases/download/assets/DesktopForge_Trailer.mp4" download><span class="l-ja">トレーラー mp4（71MB）</span><span class="l-en">Trailer mp4 (71 MB)</span></a>
       <a class="btn ghost" href="fact_sheet_ja.txt">fact_sheet_ja.txt</a>
       <a class="btn ghost" href="fact_sheet_en.txt">fact_sheet_en.txt</a>
     </div>
 
-    <p class="lead l-ja" style="margin-top:14px;">zip にはスクリーンショット20枚（1920×1080 PNG、日本語UI・英語UI 各10枚）、ループ動画7場面 計11ファイル（うち4場面は日本語UI版も収録）、ファクトシート（日英）が入っています。トレーラーは容量が大きいため別ダウンロードです。</p>
-    <p class="lead l-en" style="margin-top:14px;">The zip contains 20 screenshots (1920×1080 PNG — 10 with English UI, 10 with Japanese UI), 7 short loops in 11 files (4 of them also in a Japanese-UI version), and both fact sheets. The trailer is a separate download.</p>
+    <p class="lead l-ja" style="margin-top:14px;">zip にはスクリーンショット20枚（1920×1080 PNG、日本語UI・英語UI 各10枚）、ループ動画7場面 計11ファイル（うち4場面は日本語UI版も収録）、ロゴとカプセル画像7点、ファクトシート（日英）が入っています。トレーラーは容量が大きいため別ダウンロードです（日本語字幕版・英語字幕版）。</p>
+    <p class="lead l-en" style="margin-top:14px;">The zip contains 20 screenshots (1920×1080 PNG — 10 with English UI, 10 with Japanese UI), 7 short loops in 11 files (4 of them also in a Japanese-UI version), the logo and 6 capsule images, and both fact sheets. The trailer is a separate download.</p>
 
     <div class="l-ja">
       <h3>素材の利用について</h3>
