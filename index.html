@@ -93,6 +93,14 @@
   .btn.ghost { background: transparent; color: var(--accent); border: 1px solid var(--accent-dim); }
   .btn.ghost:hover { background: rgba(224,138,60,.1); color: var(--accent); }
 
+  /* ---- トレーラー ----
+     display は必ずクラス側に置く。インライン style だと言語切り替えの
+     display:none に勝ってしまい、日英2本が同時に出る。 */
+  .trailer-player {
+    width: 100%; display: block; background: #000;
+    border: 1px solid var(--line); border-radius: var(--radius);
+  }
+
   /* ---- media grid ---- */
   .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 14px; margin-top: 18px; }
   figure { margin: 0; }
@@ -152,12 +160,12 @@
          mp4 の直接ダウンロードは編集部が使うので残しておく。
          字幕だけが日英で異なる。映像内のゲーム UI は両方とも英語。 -->
     <div style="margin-top:18px;">
-      <video class="l-ja" src="https://github.com/xz585a/desktop-forge-presskit/releases/download/assets/DesktopForge_Trailer_ja.mp4" controls preload="metadata"
+      <video class="l-ja trailer-player" src="https://github.com/xz585a/desktop-forge-presskit/releases/download/assets/DesktopForge_Trailer_ja.mp4" controls preload="metadata"
              poster="assets/images/02_workshop_ja.png"
-             style="width:100%; display:block; border:1px solid var(--line); border-radius:var(--radius); background:#000;"></video>
-      <video class="l-en" src="https://github.com/xz585a/desktop-forge-presskit/releases/download/assets/DesktopForge_Trailer.mp4" controls preload="metadata"
+            ></video>
+      <video class="l-en trailer-player" src="https://github.com/xz585a/desktop-forge-presskit/releases/download/assets/DesktopForge_Trailer.mp4" controls preload="metadata"
              poster="assets/images/02_workshop_en.png"
-             style="width:100%; display:block; border:1px solid var(--line); border-radius:var(--radius); background:#000;"></video>
+            ></video>
     </div>
 
     <p class="lead l-ja" style="margin-top:12px;">日本語字幕版です。字幕以外は英語版と同じ映像で、ゲーム内の UI は英語表示のままです。英語字幕版は上の English で切り替わります。</p>
