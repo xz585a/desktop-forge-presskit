@@ -97,7 +97,7 @@
      display は必ずクラス側に置く。インライン style だと言語切り替えの
      display:none に勝ってしまい、日英2本が同時に出る。 */
   .trailer-player {
-    width: 100%; display: block; background: #000;
+    width: 100%; display: block; background: #000; aspect-ratio: 16 / 9;
     border: 1px solid var(--line); border-radius: var(--radius);
   }
 
@@ -156,16 +156,19 @@
     <h2 class="l-ja">トレーラー</h2>
     <h2 class="l-en">Trailer</h2>
 
-    <!-- YouTube に公開したら、この <video> を iframe 埋め込みへ差し替える（日英とも）。
-         mp4 の直接ダウンロードは編集部が使うので残しておく。
+    <!-- YouTube 埋め込み（日英2本）。display はクラス側に置くこと。インライン style だと
+         言語切り替えの display:none に勝ち、日英2本が同時に出る。
+         mp4 の直接ダウンロードは編集部が使うので下に残してある。
          字幕だけが日英で異なる。映像内のゲーム UI は両方とも英語。 -->
     <div style="margin-top:18px;">
-      <video class="l-ja trailer-player" src="https://github.com/xz585a/desktop-forge-presskit/releases/download/assets/DesktopForge_Trailer_ja.mp4" controls preload="metadata"
-             poster="assets/images/02_workshop_ja.png"
-            ></video>
-      <video class="l-en trailer-player" src="https://github.com/xz585a/desktop-forge-presskit/releases/download/assets/DesktopForge_Trailer.mp4" controls preload="metadata"
-             poster="assets/images/02_workshop_en.png"
-            ></video>
+      <iframe class="l-ja trailer-player" src="https://www.youtube-nocookie.com/embed/lH1CPiquSWI"
+              title="Desktop Forge トレーラー（日本語字幕）" loading="lazy" frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen></iframe>
+      <iframe class="l-en trailer-player" src="https://www.youtube-nocookie.com/embed/MmC9m-qBp0Q"
+              title="Desktop Forge — Announcement Trailer" loading="lazy" frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen></iframe>
     </div>
 
     <p class="lead l-ja" style="margin-top:12px;">日本語字幕版です。字幕以外は英語版と同じ映像で、ゲーム内の UI は英語表示のままです。英語字幕版は上の English で切り替わります。</p>
@@ -213,14 +216,17 @@
         <tr><th>対応言語</th><td>日本語、英語（テキスト・音声なし）</td></tr>
         <tr><th>発売時期</th><td>2027年前半 予定</td></tr>
         <tr><th>価格</th><td>未定</td></tr>
-        <tr><th>デモ版</th><td>公開予定</td></tr>
+        <tr><th>デモ版</th><td>2026年9月 公開予定</td></tr>
         <tr><th>開発</th><td>Nulpoyo（個人開発）</td></tr>
         <tr><th>Steam</th><td><a href="https://store.steampowered.com/app/5016990/">store.steampowered.com/app/5016990/</a></td></tr>
       </table>
 
       <h3>開発者</h3>
       <p>Nulpoyo（ぬるぽよ）。日本の会社員。本業のかたわら、個人でゲームを制作しています。</p>
+      <p>放置ゲームが好きで、画面の右下でゲームが動いているだけで作業のモチベーションが上がります。その感覚そのものを形にしたくて作りました。</p>
+      <p>命の重みを大きくしたのは、そのほうが渡す剣が輝くからです。自分の打った剣が冒険者の命運を握ると思えば、作るほうにも力が入ります。耐久力0の剣を渡して、冒険の途中で「あ、壊れちゃった」となる場面を想像するのも、単純に楽しそうでした。</p>
       <p>作り手としても遊び手としても「やり込めるゲーム」が好きで、放っておくと難易度が高くなりがちです。『Desktop Forge』でも、デスクトップの片隅で眺めていられる手触りと、数字を詰めていく余地の両立を狙って、バランス調整に最も時間をかけています。</p>
+      <p>自分だけの職人の組み合わせを見つけて、最強の一本を打ってみてください。そしてその剣を冒険者に託し、どこまで深く潜れるか試してみてほしいです。</p>
     </div>
 
     <!-- English -->
@@ -251,14 +257,17 @@
         <tr><th>Languages</th><td>English, Japanese (text; no voice acting)</td></tr>
         <tr><th>Release</th><td>H1 2027</td></tr>
         <tr><th>Price</th><td>TBA</td></tr>
-        <tr><th>Demo</th><td>Planned</td></tr>
+        <tr><th>Demo</th><td>Planned for September 2026</td></tr>
         <tr><th>Developer</th><td>Nulpoyo (solo)</td></tr>
         <tr><th>Steam</th><td><a href="https://store.steampowered.com/app/5016990/">store.steampowered.com/app/5016990/</a></td></tr>
       </table>
 
       <h3>Developer</h3>
       <p>Nulpoyo. A solo developer based in Japan, making games alongside a full-time office job.</p>
+      <p>I love idle games. Just having one running in the bottom-right corner of my screen makes me want to keep working. I wanted to build that feeling itself.</p>
+      <p>I made death matter because it makes the sword you hand over matter. If the blade you forged decides whether an adventurer comes home, you put more into forging it. And picturing someone setting out with a zero-durability sword and going &quot;oh — it broke&quot; halfway through the dungeon simply sounded fun to me.</p>
       <p>I like games with a lot to chew on — which means mine tend to end up harder than I intended. Most of the work on Desktop Forge has gone into balancing: keeping it something you can leave running at the edge of your screen, while still leaving numbers worth pushing on.</p>
+      <p>Find your own combination of smiths and forge the strongest blade you can. Then hand it to an adventurer and see how deep they get.</p>
     </div>
 
   </div>

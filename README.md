@@ -141,9 +141,16 @@ gh release upload assets downloads/DesktopForge_PressKit.zip --clobber
 **日本語版がある場面は `<video>` を `class="l-ja"` / `class="l-en"` の対で置く**（`figcaption` の
 ダウンロードリンクも言語ごとに向き先を変える）。日本語版がない場面は `<video>` 1つのままでよい。
 
-トレーラーを YouTube に公開したら、`index.html` の `#trailer` セクションの `<video>` を
-iframe 埋め込みへ差し替える。**mp4 のダウンロードリンクは残す**（編集部が使う）。
-再生を YouTube に任せられるので、Releases の mp4 はダウンロード専用になる。
+**2026-08-18 に iframe 埋め込みへ差し替え済み。**`#trailer` セクションは
+`youtube-nocookie.com/embed/<id>` の iframe を日英2本置いている。
+mp4 のダウンロードリンクは残してある（編集部が使う）ので、Releases の mp4 はダウンロード専用。
+
+- 日本語字幕版: <https://youtu.be/lH1CPiquSWI>
+- 英語字幕版: <https://youtu.be/MmC9m-qBp0Q>
+
+**iframe にもインライン `style` で `display` を書かないこと。** `<video>` のときと同じ理由で、
+言語切り替えの `display:none` に勝ち、日英2本が同時に出る。高さは `.trailer-player` の
+`aspect-ratio: 16 / 9` が担っている（iframe には固有の縦横比がないため、これを外すと潰れる）。
 
 ## 制約
 

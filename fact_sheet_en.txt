@@ -11,11 +11,11 @@ Platform:     PC (Windows / Steam)
 Languages:    English, Japanese (text; no voice acting)
 Release:      H1 2027
 Price:        TBA
-Demo:         Planned
+Demo:         Planned for September 2026
 Developer:    Nulpoyo (solo)
 Steam:        https://store.steampowered.com/app/5016990/
 Press kit:    https://xz585a.github.io/desktop-forge-presskit/
-Trailer:      Top of the press kit page (mp4 available)
+Trailer:      https://youtu.be/MmC9m-qBp0Q (mp4 available from the press kit page)
 
 ================================================================
 ABOUT
@@ -62,10 +62,21 @@ DEVELOPER
 
 Nulpoyo. A solo developer based in Japan, making games alongside a full-time office job.
 
+I love idle games. Just having one running in the bottom-right corner of my screen makes
+me want to keep working. I wanted to build that feeling itself.
+
+I made death matter because it makes the sword you hand over matter. If the blade you
+forged decides whether an adventurer comes home, you put more into forging it. And
+picturing someone setting out with a zero-durability sword and going "oh — it broke"
+halfway through the dungeon simply sounded fun to me.
+
 I like games with a lot to chew on — which means mine tend to end up harder than I
 intended. Most of the work on Desktop Forge has gone into balancing: keeping it something
 you can leave running at the edge of your screen, while still leaving numbers worth
 pushing on.
+
+Find your own combination of smiths and forge the strongest blade you can. Then hand it
+to an adventurer and see how deep they get.
 
 ================================================================
 USAGE PERMISSION
