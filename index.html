@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Desktop Forge — Press Kit</title>
-<meta name="description" content="Press kit for Desktop Forge, an idle crafting and management sim that lives in the corner of your desktop.">
+<meta name="description" content="Press kit for Desktop Forge, an idle crafting and management sim that lives in the corner of your desktop — forge swords, arm adventurers, and change the world outside your walls.">
 <link rel="icon" href="assets/images/desktop_forge_icon.png">
 <style>
   :root {
@@ -110,6 +110,10 @@
     background: var(--bg-alt);
   }
   figcaption { font-size: .82rem; color: var(--fg-dim); margin-top: 6px; }
+  /* 横長の素材（世界図のループ）。1列に収めると高さ 110px の帯になり、
+     靄・隊商・国境が読めない。行いっぱいに広げて他のセルと同じ高さに揃える。 */
+  figure.wide { grid-column: 1 / -1; }
+  figure.wide video { max-height: 420px; object-fit: contain; }
 
   /* ---- misc ---- */
   .note {
@@ -131,8 +135,8 @@
   <div class="wrap">
     <img class="logo" src="assets/branding/logo_1280x720.png" alt="Desktop Forge">
     <h1 class="visually-hidden">Desktop Forge</h1>
-    <p class="tagline l-ja">デスクトップの片隅に置く、小さな鍛冶工房。個性のある職人たちが勝手に素材を集め、剣を打つ。打ち上がった剣は、訪れた冒険者へ渡す。その一振りの出来が、彼らの冒険の結末を決める。</p>
-    <p class="tagline l-en">A tiny forge that lives in the corner of your desktop. Quirky smiths gather materials and hammer out blades on their own. Every sword you hand to a passing adventurer decides how their journey ends.</p>
+    <p class="tagline l-ja">デスクトップの片隅に置く、小さな鍛冶工房。個性のある職人たちが勝手に素材を集め、剣を打つ。打ち上がった剣は、訪れた冒険者へ渡す。その一振りが、彼らの生死を分け、やがて工房の外の世界まで変えていく。</p>
+    <p class="tagline l-en">A tiny forge that lives in the corner of your desktop. Quirky smiths gather materials and hammer out blades on their own. Every sword you hand to a passing adventurer decides how their journey ends — and, in time, reshapes the world outside your walls.</p>
 
     <div class="switch">
       <button type="button" id="btn-ja" aria-pressed="false">日本語</button>
@@ -161,11 +165,11 @@
          mp4 の直接ダウンロードは編集部が使うので下に残してある。
          字幕だけが日英で異なる。映像内のゲーム UI は両方とも英語。 -->
     <div style="margin-top:18px;">
-      <iframe class="l-ja trailer-player" src="https://www.youtube-nocookie.com/embed/lH1CPiquSWI"
+      <iframe class="l-ja trailer-player" src="https://www.youtube-nocookie.com/embed/k6giLq7QAT8"
               title="Desktop Forge トレーラー（日本語字幕）" loading="lazy" frameborder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowfullscreen></iframe>
-      <iframe class="l-en trailer-player" src="https://www.youtube-nocookie.com/embed/MmC9m-qBp0Q"
+      <iframe class="l-en trailer-player" src="https://www.youtube-nocookie.com/embed/clRU4E9Q09Y"
               title="Desktop Forge — Announcement Trailer" loading="lazy" frameborder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowfullscreen></iframe>
@@ -176,10 +180,10 @@
 
     <div class="buttons">
       <a class="btn" href="https://store.steampowered.com/app/5016990/"><span class="l-ja">Steam ストアページ</span><span class="l-en">Steam page</span></a>
-      <a class="btn ghost l-ja" href="https://github.com/xz585a/desktop-forge-presskit/releases/download/assets/DesktopForge_Trailer_ja.mp4" download>トレーラー mp4 をダウンロード・日本語字幕（82MB）</a>
-      <a class="btn ghost l-ja" href="https://github.com/xz585a/desktop-forge-presskit/releases/download/assets/DesktopForge_Trailer.mp4" download>英語字幕版（81MB）</a>
-      <a class="btn ghost l-en" href="https://github.com/xz585a/desktop-forge-presskit/releases/download/assets/DesktopForge_Trailer.mp4" download>Download trailer mp4 (81 MB)</a>
-      <a class="btn ghost l-en" href="https://github.com/xz585a/desktop-forge-presskit/releases/download/assets/DesktopForge_Trailer_ja.mp4" download>Japanese-subtitled cut (82 MB)</a>
+      <a class="btn ghost l-ja" href="https://github.com/xz585a/desktop-forge-presskit/releases/download/assets/DesktopForge_Trailer_ja.mp4" download>トレーラー mp4 をダウンロード・日本語字幕（92MB）</a>
+      <a class="btn ghost l-ja" href="https://github.com/xz585a/desktop-forge-presskit/releases/download/assets/DesktopForge_Trailer.mp4" download>英語字幕版（91MB）</a>
+      <a class="btn ghost l-en" href="https://github.com/xz585a/desktop-forge-presskit/releases/download/assets/DesktopForge_Trailer.mp4" download>Download trailer mp4 (91 MB)</a>
+      <a class="btn ghost l-en" href="https://github.com/xz585a/desktop-forge-presskit/releases/download/assets/DesktopForge_Trailer_ja.mp4" download>Japanese-subtitled cut (92 MB)</a>
     </div>
   </div>
 </section>
@@ -191,21 +195,22 @@
     <!-- 日本語 -->
     <div class="l-ja">
       <h2>概要</h2>
-      <p>『Desktop Forge』は、作業中のデスクトップの片隅に置いたまま進行する、放置型の制作・経営シミュレーションです。</p>
-      <p>工房の職人には、能力だけでなく190種類以上の個性と、得意分野、好き嫌いがあります。プレイヤーは一人ずつ指示を出すのではなく、任せる仕事を決めます。職人たちは自分で採集・加工・鍛造・休憩を選んで動き、誰をどの工程に置くかが、工房の流れと完成する剣を変えていきます。</p>
+      <p>『Desktop Forge』は、作業中のデスクトップの片隅に置いたまま進行する、放置型の制作・経営シミュレーションです。自律的に動く職人たちを見守りながら剣を打ち、その剣を冒険者へ託し、世界へ送り出します。</p>
+      <p>工房の職人には、能力だけでなく200種類以上の個性と、得意分野、好き嫌いがあります。プレイヤーは一人ずつ指示を出すのではなく、任せる仕事を決めます。職人たちは自分で採集・加工・鍛造・休憩を選んで動き、誰をどの工程に置くかが、工房の流れと完成する剣を変えていきます。日々の交流で感情には波が生まれ、その気分は仕事の調子にも、出来上がる剣にも表れます。</p>
       <p>投入した素材、担当した職人、そのときの感情や作業の出来によって、剣は一本ごとに切れ味・耐久力・エンチャントの配分と品質が変わります。打ち上がったばかりの剣は真価が分からず、鑑定を進めることで段階的に明らかになります。</p>
-      <p>鑑定を終えた剣は、工房を訪れた冒険者へ託します。冒険者は工房の従業員ではありません。育てることも、呼び戻すこともできず、プレイヤーが関与できるのは彼らが持つ剣だけです。冒険者は剣を受け取る前に行き先を告げ、行き先ごとに求められる剣の形は異なります。倉庫のどの一本を持たせるかが、あなたの下す唯一の判断です。</p>
-      <p>噛み合った剣は冒険者を最後まで運び、報酬と名声を積んだログとして返ってきます。足りない剣は途中で砕け、持ち主は傷を負って引き返します。そして力の足りない剣を持たせた冒険者は、二度と工房へ戻りません。その顛末は工房の年表に刻まれ、消えることはありません。</p>
+      <p>工房の外には、8つの町と、魔物の巣と、争う3つの国があります。市場と戦争と魔物は、プレイヤーの操作とは関わりなく毎日動きます。隊商が街道を通って素材を運び、巣が荒れれば荷は細り、戦で道が塞がれば隊商はそもそも来ません。そしてその世界を動かせるのもまた、あなたが打った剣だけです。冒険者が巣を討って帰れば魔物は減り、国の求めに応じて納めた剣はその国の装備となって戦線を押し、町を治める国さえ変えてしまいます。</p>
+      <p>鑑定を終えた剣は、工房を訪れた冒険者へ託します。冒険者は工房の従業員ではありません。育てることも、呼び戻すこともできず、プレイヤーが関与できるのは彼らが持つ剣だけです。行き先ごとに求められる剣の形は異なり、求めに応えた剣は冒険者を最後まで運び、報酬と名声を積んだログとして返ってきます。力の足りない剣を持たせた冒険者は、二度と工房へ戻りません。その顛末は工房の年表に刻まれ、消えることはありません。</p>
 
       <h3>特徴</h3>
       <ul>
         <li>デスクトップ常駐 — 片隅の小さなウィンドウで動き続ける工房</li>
-        <li>自律する職人 — 仕事の方針を決め、働く様子を見守る放置型シミュレーション</li>
-        <li>190種類以上の個性 — 得意分野、好き嫌い、感情が仕事の成果を左右する</li>
-        <li>一本ごとに変わる剣 — 素材、職人、感情、運が性能の配分と品質に反映される</li>
-        <li>剣を託す — 行き先が求める形に応えられるかで、冒険の結末が変わる</li>
-        <li>命が懸かる — 力の足りない剣は砕け、持ち主は還らず、記録だけが年表に残る</li>
-        <li>長く追える目標 — 図鑑の最高記録、工房拡張ツリー、Steamランキング</li>
+        <li>自律する職人 — 仕事の方針だけを決め、働く様子を見守る放置型シミュレーション</li>
+        <li>200種類以上の個性 — 得意分野、好き嫌い、その日の感情が仕事の出来を左右する</li>
+        <li>一本ごとに違う剣 — 素材、職人、感情、運が、性能の配分と品質に表れる</li>
+        <li>一振りに命が懸かる — 力の足りない剣は砕け、持ち主は還らず、年表に記録だけが残る</li>
+        <li>動き続ける世界 — 8つの町、魔物の巣、争う3国が、あなたが見ていない間も毎日動く</li>
+        <li>剣が世界を変える — 討伐は巣を鎮め、納めた剣は戦線を押し、町を治める国を変える</li>
+        <li>長く追える目標 — 図鑑の最高記録、工房拡張ツリー、年表、Steamランキング</li>
       </ul>
 
       <h3>製品情報</h3>
@@ -213,7 +218,7 @@
         <tr><th>タイトル</th><td>Desktop Forge</td></tr>
         <tr><th>ジャンル</th><td>放置・制作経営シミュレーション / デスクトップコンパニオン</td></tr>
         <tr><th>プラットフォーム</th><td>PC（Windows / Steam）</td></tr>
-        <tr><th>対応言語</th><td>日本語、英語（テキスト・音声なし）</td></tr>
+        <tr><th>対応言語</th><td>日本語、英語、簡体字中国語（テキスト・音声なし）</td></tr>
         <tr><th>発売時期</th><td>2027年前半 予定</td></tr>
         <tr><th>価格</th><td>未定</td></tr>
         <tr><th>デモ版</th><td>2026年9月 公開予定</td></tr>
@@ -232,21 +237,22 @@
     <!-- English -->
     <div class="l-en">
       <h2>About</h2>
-      <p>Desktop Forge is an idle simulation that runs in a small window at the edge of your desktop while you work.</p>
-      <p>Every artisan has more than a set of stats: over 190 traits, plus their own specialties, likes and dislikes. You never direct them move by move — you decide which jobs each of them is allowed to take, and they choose when to gather, process, forge or rest. Who you put on which stage shapes the flow of the workshop and the swords that come out of it.</p>
+      <p>Desktop Forge is an idle simulation that runs in a small window at the edge of your desktop while you work. You watch autonomous artisans forge swords, hand those swords to the adventurers who visit, and send them out into the world.</p>
+      <p>Every artisan has more than a set of stats: over 200 traits, plus their own specialties, likes and dislikes. You never direct them move by move — you decide which jobs each of them is allowed to take, and they choose when to gather, process, forge or rest. Who you put on which stage shapes the flow of the workshop and the swords that come out of it. Everyday interactions make moods rise and fall, and those moods show in the work and in the blades.</p>
       <p>The materials used, the artisans involved, their moods and the quality of their work shape how each sword splits between edge, durability and enchantment, and how well it is made. A newly forged blade hides its true nature; appraisal uncovers it step by step.</p>
-      <p>Appraised swords go to the adventurers who visit your workshop. They are not your employees — you cannot train them, command them, or bring them home. The only thing you control is the sword in their hands. Each one announces where they are headed before taking a blade, and every destination asks for a different shape of sword. Which one you take out of storage is the only call you make.</p>
-      <p>A well-matched sword carries its bearer through the whole route and comes back as a log full of coin and renown. A poor one breaks partway, and its bearer limps home wounded. And an adventurer sent out with a blade that isn't good enough never returns at all. What happened is written into your workshop's chronicle, and it stays there.</p>
+      <p>Beyond your walls lie eight towns, the monster dens beside them, and three nations at war. Markets, war and monsters move every day, whether or not you are watching: caravans carry materials down the roads, a restless den thins out the loads, and fighting can cut a road so no caravan comes at all. And the only thing that moves that world is, again, the sword you forged. Every den your adventurers clear thins out the monsters; blades delivered to a nation's commission become its equipment, push the front line, and can change which nation rules a town.</p>
+      <p>Appraised swords go to the adventurers who visit your workshop. They are not your employees — you cannot train them, command them, or bring them home. The only thing you control is the sword in their hands. Every destination asks for a different shape of sword: a blade that answers what the road demands carries its bearer through to the end and comes back as a log full of coin and renown. An adventurer sent out with a blade that isn't good enough never returns at all. What happened is written into your workshop's chronicle, and it stays there.</p>
 
       <h3>Key features</h3>
       <ul>
         <li>A desktop companion — a compact workshop that keeps moving in the corner of your screen</li>
-        <li>Autonomous artisans — set work policies and watch an idle workshop run on its own</li>
-        <li>Over 190 traits — specialties, likes, dislikes and moods that shape the work</li>
-        <li>A different sword every time — materials, artisans, emotions and luck shape its stats and quality</li>
-        <li>Arm an adventurer — whether your blade answers what the road demands decides the outcome</li>
-        <li>Lives on the line — a weak blade breaks, its bearer never returns, and only the record remains</li>
-        <li>Long-term goals — codex records, a workshop expansion tree, and Steam leaderboards</li>
+        <li>Autonomous artisans — set the work policy and watch an idle workshop run itself</li>
+        <li>Over 200 traits — specialties, likes, dislikes and the mood of the day shape the work</li>
+        <li>A different sword every time — materials, artisans, emotions and luck show in its stats and quality</li>
+        <li>A life on every blade — a weak sword breaks, its bearer never returns, and only the record remains</li>
+        <li>A world that keeps moving — eight towns, monster dens and three warring nations move on without you</li>
+        <li>Swords that change the world — clearing dens calms them; delivered blades push front lines and change who rules</li>
+        <li>Long-term goals — codex records, a workshop expansion tree, a chronicle, and Steam leaderboards</li>
       </ul>
 
       <h3>Fact sheet</h3>
@@ -254,7 +260,7 @@
         <tr><th>Title</th><td>Desktop Forge</td></tr>
         <tr><th>Genre</th><td>Idle crafting &amp; management sim / desktop companion</td></tr>
         <tr><th>Platform</th><td>PC (Windows / Steam)</td></tr>
-        <tr><th>Languages</th><td>English, Japanese (text; no voice acting)</td></tr>
+        <tr><th>Languages</th><td>English, Japanese, Simplified Chinese (text; no voice acting)</td></tr>
         <tr><th>Release</th><td>H1 2027</td></tr>
         <tr><th>Price</th><td>TBA</td></tr>
         <tr><th>Demo</th><td>Planned for September 2026</td></tr>
@@ -332,6 +338,21 @@
         <a class="l-en" href="assets/images/08_recruit_en.png"><img src="assets/thumbs/08_recruit_en.webp" alt="Recruiting a smith" loading="lazy"></a>
         <figcaption><span class="l-ja">職人を採用する</span><span class="l-en">Recruiting a smith</span></figcaption>
       </figure>
+      <figure>
+        <a class="l-ja" href="assets/images/09_world_map_ja.png"><img src="assets/thumbs/09_world_map_ja.webp" alt="The world map: eight towns, monster dens and three warring nations" loading="lazy"></a>
+        <a class="l-en" href="assets/images/09_world_map_en.png"><img src="assets/thumbs/09_world_map_en.webp" alt="The world map: eight towns, monster dens and three warring nations" loading="lazy"></a>
+        <figcaption><span class="l-ja">世界図。8つの町、魔物の巣、争う3つの国</span><span class="l-en">The world map: eight towns, monster dens and three warring nations</span></figcaption>
+      </figure>
+      <figure>
+        <a class="l-ja" href="assets/images/10_contract_ja.png"><img src="assets/thumbs/10_contract_ja.webp" alt="A nation's commission, bid against rival workshops" loading="lazy"></a>
+        <a class="l-en" href="assets/images/10_contract_en.png"><img src="assets/thumbs/10_contract_en.webp" alt="A nation's commission, bid against rival workshops" loading="lazy"></a>
+        <figcaption><span class="l-ja">受注。納めた剣は国の装備となり、戦線を押す</span><span class="l-en">A commission: the blades you deliver become a nation's equipment</span></figcaption>
+      </figure>
+      <figure>
+        <a class="l-ja" href="assets/images/11_nation_ja.png"><img src="assets/thumbs/11_nation_ja.webp" alt="A nation's detail: equipment supply and the shifting front line" loading="lazy"></a>
+        <a class="l-en" href="assets/images/11_nation_en.png"><img src="assets/thumbs/11_nation_en.webp" alt="A nation's detail: equipment supply and the shifting front line" loading="lazy"></a>
+        <figcaption><span class="l-ja">国の詳細。装備の供給と、押し合う戦線</span><span class="l-en">A nation's detail: equipment supply and the shifting front line</span></figcaption>
+      </figure>
     </div>
 
     <h2 style="margin-top:44px;" class="l-ja">ループ動画</h2>
@@ -361,6 +382,11 @@
         <video class="l-ja" src="assets/gifs/loop_traits_ja.mp4" autoplay loop muted playsinline preload="metadata"></video>
         <video class="l-en" src="assets/gifs/loop_traits.mp4" autoplay loop muted playsinline preload="metadata"></video>
         <figcaption><span class="l-ja">個性と好き嫌い — <a href="assets/gifs/loop_traits_ja.mp4">ダウンロード</a></span><span class="l-en">Traits and likes — <a href="assets/gifs/loop_traits.mp4">download</a></span></figcaption>
+      </figure>
+      <figure class="wide">
+        <video class="l-ja" src="assets/gifs/loop_world_map_ja.mp4" autoplay loop muted playsinline preload="metadata"></video>
+        <video class="l-en" src="assets/gifs/loop_world_map.mp4" autoplay loop muted playsinline preload="metadata"></video>
+        <figcaption><span class="l-ja">見ていない間も動き続ける世界 — <a href="assets/gifs/loop_world_map_ja.mp4">ダウンロード</a></span><span class="l-en">A world that keeps moving without you — <a href="assets/gifs/loop_world_map.mp4">download</a></span></figcaption>
       </figure>
       <figure>
         <video class="l-ja" src="assets/gifs/loop_adventure_depart_ja.mp4" autoplay loop muted playsinline preload="metadata"></video>
@@ -419,14 +445,14 @@
     <h2 class="l-en">Downloads</h2>
 
     <div class="buttons">
-      <a class="btn" href="https://github.com/xz585a/desktop-forge-presskit/releases/download/assets/DesktopForge_PressKit.zip" download><span class="l-ja">一括ダウンロード zip（49MB）</span><span class="l-en">Full press kit, zip (49 MB)</span></a>
-      <a class="btn ghost" href="https://github.com/xz585a/desktop-forge-presskit/releases/download/assets/DesktopForge_Trailer.mp4" download><span class="l-ja">トレーラー mp4（81MB）</span><span class="l-en">Trailer mp4 (81 MB)</span></a>
+      <a class="btn" href="https://github.com/xz585a/desktop-forge-presskit/releases/download/assets/DesktopForge_PressKit.zip" download><span class="l-ja">一括ダウンロード zip（62MB）</span><span class="l-en">Full press kit, zip (62 MB)</span></a>
+      <a class="btn ghost" href="https://github.com/xz585a/desktop-forge-presskit/releases/download/assets/DesktopForge_Trailer.mp4" download><span class="l-ja">トレーラー mp4（91MB）</span><span class="l-en">Trailer mp4 (91 MB)</span></a>
       <a class="btn ghost" href="fact_sheet_ja.txt">fact_sheet_ja.txt</a>
       <a class="btn ghost" href="fact_sheet_en.txt">fact_sheet_en.txt</a>
     </div>
 
-    <p class="lead l-ja" style="margin-top:14px;">zip にはスクリーンショット20枚（1920×1080 PNG、日本語UI・英語UI 各10枚）、ループ動画7場面 計11ファイル（うち4場面は日本語UI版も収録）、ロゴとカプセル画像7点、ファクトシート（日英）が入っています。トレーラーは容量が大きいため別ダウンロードです（日本語字幕版・英語字幕版）。</p>
-    <p class="lead l-en" style="margin-top:14px;">The zip contains 20 screenshots (1920×1080 PNG — 10 with English UI, 10 with Japanese UI), 7 short loops in 11 files (4 of them also in a Japanese-UI version), the logo and 6 capsule images, and both fact sheets. The trailer is a separate download.</p>
+    <p class="lead l-ja" style="margin-top:14px;">zip にはスクリーンショット26枚（1920×1080 PNG、日本語UI・英語UI 各13枚）、ループ動画8場面 計13ファイル（うち5場面は日本語UI版も収録）、ロゴとカプセル画像7点、ファクトシート（日英）が入っています。トレーラーは容量が大きいため別ダウンロードです（日本語字幕版・英語字幕版）。</p>
+    <p class="lead l-en" style="margin-top:14px;">The zip contains 26 screenshots (1920×1080 PNG — 13 with English UI, 13 with Japanese UI), 8 short loops in 13 files (5 of them also in a Japanese-UI version), the logo and 6 capsule images, and both fact sheets. The trailer is a separate download.</p>
 
     <div class="l-ja">
       <h3>素材の利用について</h3>
